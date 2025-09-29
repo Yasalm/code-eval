@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  llama-cpp-python:
+    image: 3x3cut0r/llama-cpp-python:latest
+    container_name: llama-cpp-python-deepseek
+    cap_add:
+      - SYS_RESOURCE
+    environment:
+        MODEL_DOWNLOAD: "True"
+        # HF_TOKEN: ${HF_TOKEN}
+        MODEL_REPO: "TheBloke/deepseek-coder-1.3b-instruct-GGUF"
+        MODEL: "deepseek-coder-1.3b-instruct.Q4_K_M.gguf"
+        MODEL_ALIAS: "deepseek-coder-1.3b-instruct-GGUF"
+        CHAT_FORMAT: "deepseek"
+    env_file:
+        - ../.env
+    ports:
+      - 8001:8000/tcp

@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  llama-cpp-python:
+    image: 3x3cut0r/llama-cpp-python:latest
+    container_name: llama-cpp-python
+    cap_add:
+      - SYS_RESOURCE
+    environment:
+        MODEL_DOWNLOAD: "True"
+        # HF_TOKEN: ${HF_TOKEN}
+        MODEL_REPO: "TheBloke/Mistral-7B-Instruct-v0.2-GGUF"
+        MODEL: "mistral-7b-instruct-v0.2.Q2_K.gguf"
+        MODEL_ALIAS: "mistral-7b-instruct-q2k"
+        CHAT_FORMAT: "mistral"
+    env_file:
+      - ../.env
+    ports:
+      - 8000:8000/tcp
