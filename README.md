@@ -105,6 +105,8 @@ The Streamlit interface provides an easy way to:
 
 ![Streamlit Interface](streamlit_app_screenshot.png)
 
+![Streamlit Interface](models_image.png)
+
 *The Streamlit interface showing model selection, parameter configuration, and evaluation results*
 
 ## Results
